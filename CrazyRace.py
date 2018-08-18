@@ -1,5 +1,6 @@
 import pygame
 import time
+import os
 
 #Initiation function
 pygame.init()
@@ -26,8 +27,9 @@ pygame.display.set_caption('Crazy Race')
 
 clock = pygame.time.Clock()
 
+print(os.getcwd())
 # car image
-carImg = pygame.image.load('car.png')
+carImg = pygame.image.load('E:/Python_Files/Projects/Crazy_Race_Game/car.png')
 
 def car(x,y):
 	"""
@@ -46,7 +48,7 @@ def text_objects(text, font):
 
 def message_display(text):
 
-	largeText = pygame.font.Font('freesansbold.ttf', 115)
+	largeText = pygame.font.SysFont('comicsansms', 115)
 	textSurf, textRect = text_objects(text, largeText)
 	textRect.center = ( (display_width/2), (display_height/2))
 	gameDisplay.blit(textSurf, textRect)
